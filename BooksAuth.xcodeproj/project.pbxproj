@@ -18,6 +18,7 @@
 		9D0102DF212A989D0019AE07 /* GTMAppAuth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0102D9212A91F90019AE07 /* GTMAppAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D0102E2212A98F40019AE07 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0102E1212A98F40019AE07 /* GTMSessionFetcher.framework */; };
 		9D0102E3212A98FA0019AE07 /* GTMSessionFetcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0102E1212A98F40019AE07 /* GTMSessionFetcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9D0102E5212AA2180019AE07 /* GoogleBooksAuthorizationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0102E4212AA2180019AE07 /* GoogleBooksAuthorizationClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		9D0102D8212A91F90019AE07 /* AppAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppAuth.framework; sourceTree = "<group>"; };
 		9D0102D9212A91F90019AE07 /* GTMAppAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTMAppAuth.framework; sourceTree = "<group>"; };
 		9D0102E1212A98F40019AE07 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = "<group>"; };
+		9D0102E4212AA2180019AE07 /* GoogleBooksAuthorizationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksAuthorizationClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				9D0102BF212A8C980019AE07 /* AppDelegate.swift */,
 				9D0102C1212A8C980019AE07 /* ViewController.swift */,
+				9D0102E4212AA2180019AE07 /* GoogleBooksAuthorizationClient.swift */,
 				9D0102C3212A8C980019AE07 /* Main.storyboard */,
 				9D0102C6212A8C990019AE07 /* Assets.xcassets */,
 				9D0102C8212A8C990019AE07 /* LaunchScreen.storyboard */,
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D0102E5212AA2180019AE07 /* GoogleBooksAuthorizationClient.swift in Sources */,
 				9D0102C2212A8C980019AE07 /* ViewController.swift in Sources */,
 				9D0102C0212A8C980019AE07 /* AppDelegate.swift in Sources */,
 			);

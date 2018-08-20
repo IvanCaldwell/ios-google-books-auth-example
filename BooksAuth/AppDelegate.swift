@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import GTMAppAuth
-
-let gtmAuthKeychainName = "BooksAuth-GTMAuthorization"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - UIApplicationDelegate
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        loadGTMAuthState()
         
         return true
     }
@@ -28,37 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication,
                      open url: URL,
                      options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        if currentAuthorizationFlow?.resumeAuthorizationFlow(with: url) ?? false {
-            currentAuthorizationFlow = nil
-            return true
-        }
         
-        return false
-    }
-    
-    // MARK: - Private
-    
-    private func loadGTMAuthState() {
-        gtmAuthorization = GTMAppAuthFetcherAuthorization(fromKeychainForName: gtmAuthKeychainName)
-    }
-    
-    private func saveGTMAuthState() {
-        if let auth = gtmAuthorization {
-            GTMAppAuthFetcherAuthorization.save(auth, toKeychainForName: gtmAuthKeychainName)
-        } else {
-            GTMAppAuthFetcherAuthorization.removeFromKeychain(forName: gtmAuthKeychainName)
-        }
+        return GoogleBooksAuthorizationClient.shared.resumeAuthorizationFlow(with: url)
     }
     
     // MARK: - Properties
     
     var window: UIWindow?
-
-    var currentAuthorizationFlow: OIDAuthorizationFlowSession?
-    var gtmAuthorization: GTMAppAuthFetcherAuthorization? {
-        didSet {
-            saveGTMAuthState()
-        }
-    }
 }
 
